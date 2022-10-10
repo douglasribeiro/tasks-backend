@@ -52,6 +52,14 @@ pipeline{
                 }
             }
         }
+        stage('Funcional Test'){
+            steps{
+                dir('funcional-test'){
+                    git 'https://github.com/douglasribeiro/tasks-funcional-test.git'
+                    bat 'mvn test'
+                }
+            }
+        }
     }
 }
 
